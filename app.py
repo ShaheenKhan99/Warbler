@@ -326,9 +326,7 @@ def add_like(message_id):
         g.user.likes.append(liked_message)
 
     db.session.commit()
-    flash("YOU LIKED THIS MESSAGE", "success")
     return redirect("/")
-
 
 
 
