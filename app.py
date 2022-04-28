@@ -192,8 +192,8 @@ def add_follow(follow_id):
         flash("Access unauthorized.", "danger")
         return redirect("/")
 
-    followed_user = User.query.get_or_404(follow_id)
-    g.user.following.append(followed_user)
+    follow_id = User.query.get_or_404(follow_id)
+    g.user.following.append(follow_id)
     db.session.commit()
 
     return redirect(f"/users/{g.user.id}/following")
@@ -207,8 +207,8 @@ def stop_following(follow_id):
         flash("Access unauthorized.", "danger")
         return redirect("/")
 
-    followed_user = User.query.get(follow_id)
-    g.user.following.remove(followed_user)
+    follow_id = User.query.get(follow_id)
+    g.user.following.remove(follow_id)
     db.session.commit()
 
     return redirect(f"/users/{g.user.id}/following")

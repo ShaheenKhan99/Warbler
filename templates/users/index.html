@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+
+{% block title %} Show List Of All Users{% endblock %}
+
 {% block content %}
   {% if users|length == 0 %}
     <h3>Sorry, no users found</h3>
